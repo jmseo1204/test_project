@@ -4,6 +4,9 @@
 
 using namespace std;
 
+//1로 dp 초기화
+ 
+
 int limit_left_up(int* arr, int index, int limit){
 	int temp = index;
 	while(1){
@@ -30,7 +33,7 @@ void recur(int* arr, int* res, int index){
 	int min_index=left_down(arr, index);
 	//cout << "min index when index = " <<index << " -> "<< min_index<<endl;
 	if (min_index==-1) {
-		res[index]=1;
+		res[index]=arr[index];
 		return;
 	}else{
 		if (res[min_index]==0) {
@@ -54,7 +57,7 @@ void recur(int* arr, int* res, int index){
 	}
 	cout << endl;
 	*/
-	res[index]=*max_element(under.begin(), under.end())+1;
+	res[index]=*max_element(under.begin(), under.end())+arr[index];
 	return;
 }
 
